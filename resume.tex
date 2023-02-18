@@ -1,0 +1,216 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\setlength{\footskip}{4.08003pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\projectSubheading}[2]{
+\vspace{-1}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+          {#1} & #2 \\
+        \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+    
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
+\begin{document}
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{{\Large  Christopher Bannon}} & Email : \href{mailto:bannon.c.35@berkeley.edu}{bannon.c.35@berkeley.edu}\\
+    \href{https://www.cbannon.com}{cbannon.com} ---
+    \href{https://www.linkedin.com/in/cbannon}{www.linkedin.com/in/cbannon} & Mobile : 707-761-4944 \\
+  \end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubheading
+  {University of California, Berkeley}{Berkeley, CA}
+  {Bachelors of Arts in Computer Science ---  GPA: 3.6}
+  {August 2020 -- May 2024}
+  
+  %--- Courses ---
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Courses}{: Algorithms, Data Structures, Operating Systems, AI, Computer Architecture, Data Science, Discrete Math \& Probability, UI Design and Development, Machine Learning}
+   }
+ \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\href{https://csmentors.berkeley.edu/}{Computer Science Mentors (CSM)}}{Berkeley, CA}
+      {Junior Mentor $\rightarrow$ Senior Mentor (As of August)}{January 2022 - Present}
+         \resumeSubHeadingListStart
+           \item{
+             {Structure and lead a weekly comprehensive review session for a group of \textbf{5-7} 61B students (Data structures and Algorithms)}
+           }
+           \item{ 
+           {Present and model teaching demos to a 'family' of \textbf{5-8} Junior Mentors to strengthen their teaching abilities}
+           }
+           \item{ 
+           {Coordinate with a team of \textbf{15}$+$ Mentor staff to plan and host course wide social events to \textbf{60}$+$ 61B mentors}
+           }
+           \item{ 
+           {Lead monthly course wide conceptual workshops open to up to \textbf{80} 61B students}
+           }
+         \resumeSubHeadingListEnd
+         
+    \resumeSubheading
+      {University of California, Berkeley}{Berkeley, CA}
+      {Academic Intern (61A \& 61B) }{January 2022 - August 2022}
+         \resumeSubHeadingListStart
+           \item{
+             {Recognize and understand buggy student implementation and guide them towards a solution in weekly lab}
+           }
+           \item{ 
+           {Present weekly topical `mini-lectures' to groups of \textbf{30-40} students
+           }
+           }
+         \resumeSubHeadingListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+\resumeSubHeadingListStart
+% --proj1
+\projectSubheading
+    {\textbf{Planit} \textit{\small{-- React Native, Expo, Redux, Firebase, Node.js}}}{Current}
+    \resumeSubHeadingListStart
+           \item{
+             {Co-Developing a scheduling application to integrate an individual's calendar with team scheduling operations}
+           }
+        \item{ 
+        {Utilizing FirebaseAuth and Firestore to handle user registration and manage user data}
+        }
+        \item{ 
+        {Applying Firebase Cloud Notifications with Node.js to deliver reminders to users for scheduled events}
+        }
+        \item{ 
+        {Employing Github actions to streamline testing and development -- See us on the Appstore this Spring!}
+        }
+\resumeSubHeadingListEnd
+
+
+    \projectSubheading
+{\textbf{Piggy} \textit{\small{-- React.js, CanvasJS}}}{Summer 2022}
+         \resumeSubHeadingListStart
+           \item{
+             {Collaborated with a team of 5 to create a financial accountability mobile app (hosted on Heroku) in \textbf{3 days}}
+           }
+           \item{ 
+           {Helped design business logic components follow in order to track expenses, manage budgets, and plan goals}
+           }
+           \item{ 
+           {Utilized React Hooks to manage component state and implement front-end interactivity}
+           }
+         \resumeSubHeadingListEnd
+
+
+\projectSubheading
+    {\textbf{NumC}  \textit{\small -- C}}{Spring 2022}
+    \resumeSubHeadingListStart
+            \item{Used SIMD instructions and OpenMP parallelism to speedup matrix operations}
+            \item{Developed an algorithm for matrix power operations using loop unrolling, cache blocking, and repeated squaring to achieve a speedup of \textbf{978 times} (top \textbf{94th} percentile)}
+         \resumeSubHeadingListEnd
+
+         
+% --proj2
+    \projectSubheading
+    {\textbf{Gitlet}  \textit{\small -- Java}}{Spring 2021}
+    \resumeSubHeadingListStart
+           \item{
+             {Designed and implemented a Git clone using a hash-based file-structure}}
+           \item{ 
+           {Functionality includes: add, commit, remove, branch, remove branch, commit, merge, and conflict detection}}
+         \resumeSubHeadingListEnd
+% --proj3
+    \projectSubheading
+    {\textbf{Voice Controlled Car}  \textit{\small -- C, Python, Energia}}{Spring 2021}
+    \resumeSubHeadingListStart
+           \item{
+             {Devised a closed loop feedback algorithm to ensure car stays on route given external stimuli}
+           }
+           \item{ 
+           {Constructed band-pass filter to filter out unwanted frequencies and recognize \textbf{4} unique voice commands}}
+         \resumeSubHeadingListEnd
+%% --proj4
+  \resumeSubHeadingListEnd
+
+%--------PROGRAMMING SKILLS------------
+\section{Skills}
+{
+ {Java · Python · C · C++ · SQL · Scheme · HTML · CSS · Javascript · Numpy · Pandas · React.js · React Native Swift · SwiftUI · Combine · Firebase · Git · Jupyter · Figma}
+}
+
+
+%-------------------------------------------
+\end{document}
+
