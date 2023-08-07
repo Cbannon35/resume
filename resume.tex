@@ -1,9 +1,11 @@
 %-------------------------
 % Resume in Latex
-% Author : Sourabh Bajaj
-% Website: https://github.com/sb2nov/resume
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
+
+% Taken from Vaishak Krishna's resume
 
 
 \documentclass[letterpaper,11pt]{article}
@@ -15,8 +17,40 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% % sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+% \usepackage{cmbright}
+% \usepackage[OT1]{fontenc}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% arial
+\usepackage{helvet}
+
+%cambria
+% \usepackage{mathpazo}
+
+% times new roman
+% \usepackage{times}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -25,12 +59,11 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.375in}
-\addtolength{\evensidemargin}{-0.375in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-\setlength{\footskip}{4.08003pt}
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
 
 \urlstyle{same}
 
@@ -40,180 +73,215 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-4pt}\scshape\raggedright\Large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{0pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    {#1 \vspace{3pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \vspace{-1pt}
+      \textbf{\normalsize #1} & \textbf{\small #2} \\ 
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\projectSubheading}[2]{
-\vspace{-1}\item
+\newcommand{\resumeSubSubheading}[2]{
+    \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-          {#1} & #2 \\
-        \end{tabular*}\vspace{-7pt}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \normalsize#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-3pt}
+}
 
-\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-    
+
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{{\Large  Christopher Bannon}} & Email : \href{mailto:bannon.c.35@berkeley.edu}{bannon.c.35@berkeley.edu}\\
-    \href{https://www.cbannon.com}{cbannon.com} ---
-    \href{https://www.linkedin.com/in/cbannon}{linkedin.com/in/cbannon} & Mobile : 707-761-4944 \\
-  \end{tabular*}
 
-%-----------EDUCATION-----------------
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Huge Christopher Bannon}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+
+\begin{center}
+    {\Huge \textbf{Christopher Bannon}} \\ \vspace{6pt}
+    ~ \small \href{mailto:cbannon@berkeley.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{cbannon@berkeley.edu}} ~
+    ~ \small \href{https://cbannon.com}{\raisebox{-0.2\height}\faLink\ \underline{cbannon.com}} ~
+    % ~\small \raisebox{-0.1\height}\faPhone\ 707-761-4944 ~
+    % \href{https://linkedin.com/in/cbannon/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/cbannon}}  ~
+    ~\href{https://github.com/cbannon35}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/cbannon35}}~
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
 \section{Education}
-\resumeSubheading
-  {University of California, Berkeley}{Berkeley, CA}
-  {Bachelors of Arts in Computer Science ---  GPA: 3.69}
-  {August 2020 -- May 2024}
-  
-  %--- Courses ---
- \resumeSubHeadingListStart
-   \item{
-     \textbf{Courses}{: Algorithms, Data Structures, Operating Systems, AI, Computer Architecture, Data Science, Discrete Math \& Probability, UI Design and Development, Machine Learning}
-   }
- \resumeSubHeadingListEnd
-
-%-----------EXPERIENCE-----------------
-\section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{https://csmentors.berkeley.edu/}{Computer Science Mentors (CSM)}}{Berkeley, CA}
-      {Senior Mentor}{January 2022 - Present}
-         \resumeSubHeadingListStart
-           \item{
-             {Structure and lead a weekly comprehensive review session for a group of \textbf{5-7} 61B students (Data structures and Algorithms)}
-           }
-           \item{ 
-           {Present and model teaching demos to a 'family' of \textbf{5-8} Junior Mentors to strengthen their teaching abilities}
-           }
-           \item{ 
-           {Coordinate with a team of \textbf{15}$+$ Mentor staff to plan and host course wide social events to \textbf{60}$+$ 61B mentors}
-           }
-           \item{ 
-           {Lead monthly course wide conceptual workshops open to up to \textbf{80} 61B students}
-           }
-         \resumeSubHeadingListEnd
-         
+  {University of California, Berkeley | GPA: 3.72}{Aug. 2020 -- Present}
+      {B.A. in Computer Science}{Berkeley, California}
+  \resumeSubHeadingListEnd
+  
+%------RELEVANT COURSEWORK-------
+% \vspace{-16pt}
+% \section{Relevant Coursework}
+%     %\resumeSubHeadingListStart
+%         \begin{multicols}{2}
+%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
+%                 \item\small Data Structures
+%                 \item Discrete Mathematics and Probability
+%                 \item Structure and Interpretation of Computer Programs
+%                 \item Algorithms and Intractable Problems
+%                 \item Computer Architecture
+%                 \item Designing Information Devices and Systems
+%                 \item Operating Systems
+%                 \item Computer Security
+%                 \item Intro Machine Learning
+%                 \item Principles/Techniques of Data Science
+%                 \item In Progress: Decentralized Finance
+%                 \item In Progress: Deep Neural Networks
+%             \end{itemize}
+%         \end{multicols}
+%         \vspace*{2.0\multicolsep}
+    %\resumeSubHeadingListEnd
+\textbf{Coursework:} UI/UX Design \& Development, Digital Design \& Integrated Circuits, Data Structures, Algorithms, Computer Architecture, Operating Systems, Discrete Math \& Probability, Data Science, AI, Machine Learning
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+    {FavorX | Frontend Developer}{May 2023 -- August 2023}{React Native, Expo, Redux, S3}{Remote}
+    \vspace{-4pt}
+    \resumeItemListStart
+      \resumeItem{\textbf{Collaborated closely} with the design team to iterate on Figma prototypes, \textbf{prioritizing user experience}, and shipping to React Native for mobile development, resulting in polished and user-centric interfaces.}
+    
+    \resumeItemListEnd
+
     \resumeSubheading
-      {University of California, Berkeley}{Berkeley, CA}
-      {Academic Intern (61A \& 61B) }{January 2022 - August 2022}
-         \resumeSubHeadingListStart
-           \item{
-             {Recognize and understand buggy student implementation and guide them towards a solution in weekly lab}
-           }
-           \item{ 
-           {Present weekly topical `mini-lectures' to groups of \textbf{30-40} students
-           }
-           }
-         \resumeSubHeadingListEnd
+    {UC Berkeley | Undergraduate Student Instructor (CS160)}{June 2023 -- Aug 2023}{HCI, UI/UX Design and Development, Web Development, Product Design}{Berkeley, California}
+    \vspace{-4pt}
+    \resumeItemListStart
+    \resumeItem{}
+   
 
+    \resumeItemListEnd
+    \resumeSubheading
+      {Computer Science Mentors | Senior mentor (CS61B) }{Jan 2022 -- Present}{Java, Data Structures, Algorithms}{Berkeley, California}
+      \vspace{-4pt}
+      \resumeItemListStart
+      \resumeItem{}
+
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
+\vspace{-16pt}
 
-%-----------PROJECTS-----------------
+
+%-----------PROJECTS-----------
 \section{Projects}
-\resumeSubHeadingListStart
-% --proj1
-\projectSubheading
-    {\textbf{Planit} \textit{\small{-- React Native, Expo, Redux, Firebase, Node.js}}}{Current}
+    \vspace{-5pt}
     \resumeSubHeadingListStart
-           \item{
-             {Co-Developing a scheduling application to integrate an individual's calendar with team scheduling operations}
-           }
-        \item{ 
-        {Utilizing FirebaseAuth and Firestore to handle user registration and manage user data}
-        }
-        \item{ 
-        {Applying Firebase Cloud Notifications with Node.js to deliver reminders to users for scheduled events}
-        }
-        \item{ 
-        {Employing Github actions to streamline testing and development -- See us on the Appstore this Summer!}
-        }
-\resumeSubHeadingListEnd
+    % WORDLE SOLVER 
+    \resumeProjectHeading
+          {\textbf{Ascii Sandbox} $|$ \small\href{https://wordle-improve.web.app/}{\underline{https://wordle-improve.web.app/}}}{May 2022 - Sept. 2022}
+          \vspace{-12pt}
+          \resumeItemListStart
+          \resumeItem{\textbf{Coded} a information-theory rooted Wordle solver that is \textbf{\boldmath{$97\%$} as good and \textgreater 10x faster than the most accurate solver}}
+          % \resumeItem{\textbf{Ensured} compatibility with multiple operating systems and browsersusing various Web APIs}
+          \resumeItem{\textbf{Shipped extra features to 400+ users} including a \textbf{skill level calculator}, free-play mode, and solving assistant}
+            \resumeItemListEnd
+          \vspace{-13pt}
+    % GYM DATA VISUALIZATION
+    \resumeProjectHeading
+      {\textbf{Vocode Sandbox} $|$ \small\href{https://rsf-crowd-data.web.app/}{\underline{https://rsf-crowd-data.web.app/}}}{Oct. 2022 - Dec. 2022}
+      \resumeItemListStart
+      \resumeItem{\textbf{Created} a serverless, lightweight web-app with \textbf{97\% positive feedback} from 200+ Berkeley community members}
+      \resumeItem{\textbf{Coded} a data pipeline to collect, transform, and visualize trends in crowd data over time from the campus gym}
+      % \resumeItem{\textbf{Leveraged} data visualization tools to \textbf{display trends in crowd density averages} of the campus gym}
+      \resumeItemListEnd
+
+      \vspace{-13pt}
+      
+      \resumeSubHeadingListEnd
+
+\vspace{0pt}
 
 
-    \projectSubheading
-{\textbf{Piggy} \textit{\small{-- React.js, CanvasJS}}}{Summer 2022}
-         \resumeSubHeadingListStart
-           \item{
-             {Collaborated with a team of 5 to create a financial accountability mobile app (hosted on Heroku) in \textbf{3 days}}
-           }
-           \item{ 
-           {Helped design business logic components follow in order to track expenses, manage budgets, and plan goals}
-           }
-           \item{ 
-           {Utilized React Hooks to manage component state and implement front-end interactivity}
-           }
-         \resumeSubHeadingListEnd
+% %%-----------TEACHING EXPERIENCE-----------
+% \section{Teaching}
+% \resumeSubHeadingListStart
 
+% \resumeSubheading
+% {CS61C | Course Staff }{Jun. - Aug. 2023}{}{}
+% \vspace{-17pt}
+% \resumeItemListStart
+% \resumeItem{\textbf{Produced} course materials, worked with instructors, and \textbf{led teaching for exam review}, reaching \textbf{40+ students.}}
+%   \resumeItem{\textbf{Hosted} 3 sessions weekly, working 1-1 to teach topics including \textbf{processors, memory, and parallelism}}
+%   \resumeItemListEnd
 
-\projectSubheading
-    {\textbf{NumC}  \textit{\small -- C}}{Spring 2022}
-    \resumeSubHeadingListStart
-            \item{Used SIMD instructions and OpenMP parallelism to speedup matrix operations}
-            \item{Developed an algorithm for matrix power operations using loop unrolling, cache blocking, and repeated squaring to achieve a speedup of \textbf{978 times} (top \textbf{94th} percentile)}
-         \resumeSubHeadingListEnd
+% \resumeSubheading
+% {CS Mentors | Mentor}{Jan. - May 2022/2023}{}{}
+% \vspace{-17pt}
+% \resumeItemListStart
+%   \resumeItem{\textbf{Scored a 4.5/5.0 average rating} for teaching computer architecture + data structures concepts to 10+ students}
+%   \resumeItem{\textbf{Co-led} task forces to teach ``Git'' and produce review videos, increasing student achievement in the course}
+%   \resumeItemListEnd
 
-         
-% --proj2
-    \projectSubheading
-    {\textbf{Gitlet}  \textit{\small -- Java}}{Spring 2021}
-    \resumeSubHeadingListStart
-           \item{
-             {Designed and implemented a Git clone using a hash-based file-structure}}
-           \item{ 
-           {Functionality includes: add, commit, remove, branch, remove branch, commit, merge, and conflict detection}}
-         \resumeSubHeadingListEnd
-% --proj3
-    \projectSubheading
-    {\textbf{Voice Controlled Car}  \textit{\small -- C, Python, Energia}}{Spring 2021}
-    \resumeSubHeadingListStart
-           \item{
-             {Devised a closed loop feedback algorithm to ensure car stays on route given external stimuli}
-           }
-           \item{ 
-           {Constructed band-pass filter to filter out unwanted frequencies and recognize \textbf{4} unique voice commands}}
-         \resumeSubHeadingListEnd
-%% --proj4
-  \resumeSubHeadingListEnd
+% \resumeSubHeadingListEnd
+% \vspace{-16pt}
 
-%--------PROGRAMMING SKILLS------------
+%-----------PROGRAMMING SKILLS-----------
 \section{Skills}
-{
- {Java · Python · C · C++ · SQL · Scheme · HTML · CSS · 
- Javascript · Typescript · React.js · React Native  Styled Components ·
- Numpy · Pandas · 
- Swift · SwiftUI · Combine · Firebase · Git · Jupyter · Figma}
-}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item{
+      \textbf{Computer Languages}{: Python, C, JavaScript, RISC-V Assembly, Java, HTML/CSS} \\
+      \vspace{4pt}
+      \textbf{Technologies/Frameworks}{: Git/Github, VSCode, MongoDB, Jupyter, Azure, Linux, SQL, ReactJS} \\
+      % \vspace{4pt}
+      % \textbf{Developer Tools}{: VS Code, IntelliJ, PyCharm, Eclipse, Visual Studio} \\
+    }
+
+ \end{itemize}
+ \vspace{-10pt}
+ 
+                
 
 
-%-------------------------------------------
 \end{document}
-
