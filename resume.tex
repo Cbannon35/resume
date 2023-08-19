@@ -27,6 +27,10 @@
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
 
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{mdframed}
+\usepackage{hyperref}
 
 %----------FONT OPTIONS----------
 % % sans-serif
@@ -83,7 +87,13 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{3pt}}
+    {#1 \vspace{0pt}}
+  }
+}
+
+\newcommand{\resumeItemTabbed}[1]{
+  \item[leftmargin=.15in]\small{
+    {#1 \vspace{0pt}}
   }
 }
 
@@ -110,11 +120,20 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+  \item
     \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
       \normalsize#1 & \textbf{\small #2}\\
     \end{tabular*}\vspace{-3pt}
 }
+
+\newcommand{\resumeProjectHeadingTabbed}[2]{
+  \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+       \normalsize#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\hspaceP}[1]{\hspace*{#1}}
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
@@ -122,6 +141,8 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListStartTabbed}{\begin{itemize}[leftmargin=0.10in, label={}]}
+
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
@@ -188,94 +209,107 @@
   \resumeSubHeadingListStart
 
   \resumeSubheading
-    {FavorX | Frontend Developer}{May 2023 -- August 2023}{React Native, Expo, Redux, S3}{Remote}
-    \vspace{-4pt}
+    {FavorX | Frontend Developer}{May 2023 -- August 2023}{React Native, Expo, Redux, AWS S3}{Remote}
+    \vspace{-2pt}
     \resumeItemListStart
       \resumeItem{\textbf{Collaborated closely} with the design team to iterate on Figma prototypes, \textbf{prioritizing user experience}, and shipping to React Native for mobile development, resulting in polished and user-centric interfaces.}
-    
+      \resumeItem{\textbf{Implemented and refined} user's 'transfer tokens' flow, and additionally \textbf{used redux} to \textbf{create} new \textbf{reducers}, \textbf{slices}, and, \textbf{``thunks''}, to \textbf{imporove} state management and asynchronous efficiency and \textbf{integrate} \textbf{firebase} and our \textbf{backend API} into the frontend}
+      % \resumeItem{\textbf{Incorporated} Amazon's \textbf{S3} service to \textbf{upload} and \textbf{store} user's profile picture in a }
+      \resumeItem{\textbf{Scaffolded} out a \textbf{scalable} service for \textbf{uploading} and \textbf{storing} user's profile pictures in an \textbf{AWS S3} bucket, \textbf{leveraging} expo's API to asynchronously \textbf{resize and compress} image for efficiency and write to a unique \textbf{secureURL}}
     \resumeItemListEnd
 
     \resumeSubheading
     {UC Berkeley | Undergraduate Student Instructor (CS160)}{June 2023 -- Aug 2023}{HCI, UI/UX Design and Development, Web Development, Product Design}{Berkeley, California}
-    \vspace{-4pt}
+    \vspace{-2pt}
     \resumeItemListStart
-    \resumeItem{}
+    \resumeItem{\textbf{Developed} a \href{https://github.com/Cbannon35/cs160_tools}{\underline{python script}} to automate our airtable to email logistical workflow to save TA hours}
+    \resumeItem{\textbf{Mentored 15+} students throughout the entirity of the design process}
+    \resumeItem{\textbf{Led} weekly discussions on \textbf{frontend development}, \textbf{prototyping}, and \textbf{design} to \textbf{30+} students }
    
 
     \resumeItemListEnd
     \resumeSubheading
       {Computer Science Mentors | Senior mentor (CS61B) }{Jan 2022 -- Present}{Java, Data Structures, Algorithms}{Berkeley, California}
-      \vspace{-4pt}
+      \vspace{-2pt}
       \resumeItemListStart
-      \resumeItem{}
-
+      \resumeItem{Structure and lead a weekly comprehensive review session for a group of \textbf{5-7} students}
+      \resumeItem{Present and model pedagogy techniques to a 'family' of \textbf{5-8} Junior Mentors to strengthen their teaching abilities}
+      \resumeItem{Coordinate with a team of \textbf{15}$+$ Mentor staff to plan and host course wide social events to \textbf{60}$+$ 61B mentors}
+      \resumeItem{Lead monthly course wide conceptual workshops open to up to \textbf{80} 61B students}
+      \resumeItem{Recieved a 4.6/5.0 overall rating}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 \vspace{-16pt}
-
 
 %-----------PROJECTS-----------
 \section{Projects}
     \vspace{-5pt}
     \resumeSubHeadingListStart
-    % WORDLE SOLVER 
+
+    \resumeSubheading
+    {The Sandbox Series}{May 2023 -- Present}
+    {An ongoing series of projects that promote \textbf{creativity} and \textbf{play} in the browser}{}
+
+
+    \resumeSubHeadingListEnd
+
+    \vspace{-5pt}
+    \resumeSubHeadingListStartTabbed
+    \vspace{-10pt}
+    % INDENTED PROJECTS
+    \item
+    \begin{mdframed}[linewidth=2,linecolor=black, innertopmargin=-1.25em,innerbottommargin=1.5em, topline=false,rightline=false,bottomline=false]
+    
     \resumeProjectHeading
-          {\textbf{Ascii Sandbox} $|$ \small\href{https://wordle-improve.web.app/}{\underline{https://wordle-improve.web.app/}}}{May 2022 - Sept. 2022}
-          \vspace{-12pt}
+          {\textbf{Ascii Sandbox} | \small\textit{React, Tailwind CSS} $\rightarrow$ \small\href{url}{\underline{url}}}{}
+          \vspace{-15pt}
           \resumeItemListStart
-          \resumeItem{\textbf{Coded} a information-theory rooted Wordle solver that is \textbf{\boldmath{$97\%$} as good and \textgreater 10x faster than the most accurate solver}}
-          % \resumeItem{\textbf{Ensured} compatibility with multiple operating systems and browsersusing various Web APIs}
-          \resumeItem{\textbf{Shipped extra features to 400+ users} including a \textbf{skill level calculator}, free-play mode, and solving assistant}
-            \resumeItemListEnd
-          \vspace{-13pt}
-    % GYM DATA VISUALIZATION
+          \resumeItem{\textbf{Coded} a minimalist interface to focus users on}
+        
+          \resumeItemListEnd
+          \vspace{0pt}
+      
+    % PROJ 2
     \resumeProjectHeading
-      {\textbf{Vocode Sandbox} $|$ \small\href{https://rsf-crowd-data.web.app/}{\underline{https://rsf-crowd-data.web.app/}}}{Oct. 2022 - Dec. 2022}
+      {\textbf{Vocode Sandbox} | \small\textit{React, Tailwind CSS, OpenAI GPT} $\rightarrow$ \small\href{https://vocode-sandbox.web.app/}{\underline{https://vocode-sandbox.web.app/}}}{}
       \resumeItemListStart
-      \resumeItem{\textbf{Created} a serverless, lightweight web-app with \textbf{97\% positive feedback} from 200+ Berkeley community members}
-      \resumeItem{\textbf{Coded} a data pipeline to collect, transform, and visualize trends in crowd data over time from the campus gym}
+      \resumeItem{\textbf{Created} a serverless, responsive web-app that lets users experiment with different prompts for Vocode's voice AI}
+      \resumeItem{\textbf{Arranged} an interactive  and engaging UI that displays a transcript of communication and an AI generated picture based on the feeling of the conversation}
       % \resumeItem{\textbf{Leveraged} data visualization tools to \textbf{display trends in crowd density averages} of the campus gym}
       \resumeItemListEnd
 
       \vspace{-13pt}
-      
+    \end{mdframed}
+    \resumeSubHeadingListEnd
+    \vspace{-15pt}
+    % Proj 3
+    \resumeSubHeadingListStart
+    % \resumeProjectHeading
+      % {\textbf{Piggy} | \small\textit{Product Design, UI/UX, Figma, React Native} $\rightarrow$ \href{https://docs.google.com/document/d/17vMG9EYrOF4Sdnu8Pw2I1efRw538R-HkPYw4lXINlHI/edit\#heading=h.wnis0jsk4ozt}{Design Doc}}{August 2022}
+      % \resumeItemListStart
+      % \resumeItem{\textbf{Deployed} a React component library on \textbf{npm} and \textbf{established CI/CD} via \textbf{Github Actions}}
+      % \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{react-window-component} | \small\textit{React, npm} $\rightarrow$ \href{https://docs.google.com/document/d/17vMG9EYrOF4Sdnu8Pw2I1efRw538R-HkPYw4lXINlHI/edit\#heading=h.wnis0jsk4ozt}{Design Doc}}{August 2023 - Present}
+      \resumeItemListStart
+      \resumeItem{\textbf{Deployed} a React component library on \textbf{npm} and \textbf{established CI/CD} via \textbf{Github Actions}}
+      \resumeItemListEnd
+
       \resumeSubHeadingListEnd
+    
 
-\vspace{0pt}
+\vspace{-10pt}
 
 
-% %%-----------TEACHING EXPERIENCE-----------
-% \section{Teaching}
-% \resumeSubHeadingListStart
-
-% \resumeSubheading
-% {CS61C | Course Staff }{Jun. - Aug. 2023}{}{}
-% \vspace{-17pt}
-% \resumeItemListStart
-% \resumeItem{\textbf{Produced} course materials, worked with instructors, and \textbf{led teaching for exam review}, reaching \textbf{40+ students.}}
-%   \resumeItem{\textbf{Hosted} 3 sessions weekly, working 1-1 to teach topics including \textbf{processors, memory, and parallelism}}
-%   \resumeItemListEnd
-
-% \resumeSubheading
-% {CS Mentors | Mentor}{Jan. - May 2022/2023}{}{}
-% \vspace{-17pt}
-% \resumeItemListStart
-%   \resumeItem{\textbf{Scored a 4.5/5.0 average rating} for teaching computer architecture + data structures concepts to 10+ students}
-%   \resumeItem{\textbf{Co-led} task forces to teach ``Git'' and produce review videos, increasing student achievement in the course}
-%   \resumeItemListEnd
-
-% \resumeSubHeadingListEnd
-% \vspace{-16pt}
-
-%-----------PROGRAMMING SKILLS-----------
+%-----------SKILLS-----------
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \item{
-      \textbf{Computer Languages}{: Python, C, JavaScript, RISC-V Assembly, Java, HTML/CSS} \\
+      \textbf{Computer Languages}{: Python, C, Java, HTML/CSS, JavaScript, Typescript, RISC-V Assembly, Swift} \\
       \vspace{4pt}
-      \textbf{Technologies/Frameworks}{: Git/Github, VSCode, MongoDB, Jupyter, Azure, Linux, SQL, ReactJS} \\
-      % \vspace{4pt}
-      % \textbf{Developer Tools}{: VS Code, IntelliJ, PyCharm, Eclipse, Visual Studio} \\
+      \textbf{Technologies}{: Git/Github, VSCode, Figma, MongoDB, Jupyter, SQL, Firebase} \\
+      \vspace{4pt}
+      \textbf{Frontend Development}{: React, React Native, Redux, Expo, Tailwind CSS, MUI, Bootstrap} \\
     }
 
  \end{itemize}
