@@ -32,6 +32,28 @@
 \usepackage{mdframed}
 \usepackage{hyperref}
 
+% LINK command? https://tex.stackexchange.com/questions/99316/symbol-for-external-links
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
 %----------FONT OPTIONS----------
 % % sans-serif
 % \usepackage[sfdefault]{FiraSans}
@@ -86,14 +108,16 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
+  
   \item\small{
-    {#1 \vspace{1pt}}
+    {#1 \vspace{2pt}}
   }
 }
 
 \newcommand{\resumeItemTabbed}[1]{
-  \item[leftmargin=.15in]\small{
-    {#1 \vspace{0pt}}
+  \setlength{\itemindent}{-10pt}
+  \item\small{
+    {#1 \vspace{1pt}}
   }
 }
 
@@ -126,13 +150,6 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeProjectHeadingTabbed}[2]{
-  \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-       \normalsize#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-3pt}
-}
-
 \newcommand{\hspaceP}[1]{\hspace*{#1}}
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -146,6 +163,8 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+\newcommand{\resumeItemListStartIndent}{\begin{description}}
+\newcommand{\resumeItemListEndIndent}{\end{description}\vspace{-2pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -178,29 +197,6 @@
   {University of California, Berkeley | GPA: 3.72}{Aug. 2020 -- Present}
       {B.A. in Computer Science}{Berkeley, California}
   \resumeSubHeadingListEnd
-  
-%------RELEVANT COURSEWORK-------
-% \vspace{-16pt}
-% \section{Relevant Coursework}
-%     %\resumeSubHeadingListStart
-%         \begin{multicols}{2}
-%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
-%                 \item\small Data Structures
-%                 \item Discrete Mathematics and Probability
-%                 \item Structure and Interpretation of Computer Programs
-%                 \item Algorithms and Intractable Problems
-%                 \item Computer Architecture
-%                 \item Designing Information Devices and Systems
-%                 \item Operating Systems
-%                 \item Computer Security
-%                 \item Intro Machine Learning
-%                 \item Principles/Techniques of Data Science
-%                 \item In Progress: Decentralized Finance
-%                 \item In Progress: Deep Neural Networks
-%             \end{itemize}
-%         \end{multicols}
-%         \vspace*{2.0\multicolsep}
-    %\resumeSubHeadingListEnd
 \textbf{Coursework:} UI/UX Design \& Development, Digital Design \& Integrated Circuits, Data Structures, Algorithms, Computer Architecture, Operating Systems, Discrete Math \& Probability, Data Science, AI, Machine Learning
 
 
@@ -209,24 +205,29 @@
   \resumeSubHeadingListStart
 
   \resumeSubheading
+    {UC Berkeley EECS | Undergraduate Researcher}{Sep 2023 -- Present}{}{}
+    \vspace{-15pt}
+    \resumeItemListStart
+      \resumeItem{\textbf{Engaged} in \textbf{HCI reserach} at the \href{https://www.hybrid-ecologies.org/}{\underline{Hybrid Ecologies Lab \ExternalLink}}, advised by \href{https://www2.eecs.berkeley.edu/Faculty/Homepages/paulos.html}{\underline{Eric Paulos \ExternalLink}}, under \href{https://kwsong.github.io/}{\underline{Katherine Song \ExternalLink}}}
+      \resumeItem{\textbf{Experimented} with functional bio-materials to create sustainable electronics and decomposable interactive systems}
+    \resumeItemListEnd
+
+  \resumeSubheading
     {FavorX | Frontend Developer}{May 2023 -- August 2023}{}{}
     \vspace{-15pt}
     \resumeItemListStart
-      \resumeItem{\textbf{Collaborated closely} with the design team to \textbf{iterate} on Figma prototypes, creating \textbf{polished}, \textbf{user-centric} interfaces, and \textbf{deployed} solutions on mobile development frameworks: \textbf{Expo} and \textbf{React Native}}
-      \resumeItem{\textbf{Implemented and refined} user's 'transfer tokens' flow; \textbf{used redux} to \textbf{create} new \textbf{reducers}, \textbf{slices}, and, \textbf{``thunks''}, to  \textbf{integrate} \textbf{firebase} with the \textbf{backend API}, resulting in \textbf{improved} asynchronous efficiency and state management}
-      \resumeItem{\textbf{Scaffolded} a \textbf{scalable} service for \textbf{uploading} and \textbf{storing} user's profile pictures in an \textbf{AWS S3} bucket, \textbf{leveraging} Expo's API to asynchronously \textbf{resize and compress} the image and write to a unique \textbf{secure url}}
+    \resumeItem{\textbf{Collaborated closely} with the design team to polish \textbf{user-centric} interfaces and \textbf{deploy} solutions in \textbf{React Native}}
+    \resumeItem{\textbf{Scaffolded} a \textbf{scalable} service: used Expo's API to upload profile pictures to a \textbf{secure url} in an \textbf{AWS S3} bucket}
+    \resumeItem{\textbf{Implemented and refined} user's 'transfer tokens' flow; used \textbf{redux} to  \textbf{integrate} \textbf{firebase} with the \textbf{backend API}, resulting in \textbf{improved} asynchronous efficiency and state management}
     \resumeItemListEnd
 
     \resumeSubheading
     {UC Berkeley | Undergraduate Student Instructor (CS160)}{June 2023 -- Aug 2023}{}{}
     \vspace{-15pt}
     \resumeItemListStart
-    \resumeItem{\textbf{Organized} scope, sequence, and delivery of \href{https://cbannon35.github.io/teaching/}{\underline{instruction}} on \textbf{HCI}, \textbf{UI/UX}, \textbf{web development}, and \textbf{product design}}
-    \resumeItem{\textbf{Developed} a \href{https://github.com/Cbannon35/cs160_tools}{\underline{python script}} to \textbf{automate} staff airtable-to-email logistical workflow and saved \textbf{10}$+$ TA hours}
-    \resumeItem{\textbf{Critiqued} \textbf{200}$+$ assignments/projects and \textbf{mentored} \textbf{15}$+$ students throughout the \textbf{entirety} of the design process}
-    
-   
-
+    \resumeItem{\textbf{Organized} scope, sequence, and delivery of \href{https://cbannon35.github.io/teaching/}{\underline{instruction \ExternalLink}} on \textbf{HCI}, \textbf{UI/UX}, \textbf{web dev}, and \textbf{product design}}
+    \resumeItem{\textbf{Developed} a \href{https://github.com/Cbannon35/cs160_tools}{\underline{python script \ExternalLink}} to \textbf{automate} staff airtable-to-email logistical workflow and saved \textbf{10}$+$ TA hours}
+    \resumeItem{\textbf{Critiqued} \textbf{200}$+$ assignments/projects and recieved a \textbf{94$\%$}  approval rating for \textbf{teaching effectiveness}}
     \resumeItemListEnd
     \resumeSubheading
       {Computer Science Mentors | Senior mentor (CS61B) }{Jan 2022 -- Present}{}{}
@@ -234,7 +235,7 @@
       \resumeItemListStart
       \resumeItem{\textbf{Lead} a weekly comprehensive review session for a group of 61B students; rated \textbf{4.6/5.0} for \textbf{teaching effectiveness}}
       \resumeItem{\textbf{Presented} and \textbf{modeled} pedagogy techniques to a cohort of Junior Mentors to strengthen their teaching abilities}
-      \resumeItem{\textbf{Coordinated} with \textbf{25}$+$ Mentor staff to plan and host course wide social events to \textbf{60}$+$ 61B mentors}
+      % \resumeItem{\textbf{Coordinated} with \textbf{25}$+$ Mentor staff to plan and host course wide social events to \textbf{60}$+$ 61B mentors}
       \resumeItem{\textbf{Hosted} monthly conceptual workshops for up to \textbf{80} 61B students on \textbf{java}, \textbf{data structures}, and \textbf{algorithms}}
      
       \resumeItemListEnd
@@ -260,42 +261,44 @@
     \item
     \begin{mdframed}[linewidth=2,linecolor=black, innertopmargin=-1.25em,innerbottommargin=1em, topline=false,rightline=false,bottomline=false]
     
+      % PROJ 2
     \resumeProjectHeading
-          {\textbf{ASCII Sandbox} | \small\textit{React, FastAPI, Langchain, OpenAI} $\rightarrow$ \small\href{https://github.com/Cbannon35/ascii-sandbox/}{\underline{See the Code}}}{}
-          \vspace{-15pt}
-          \resumeItemListStart
-          \resumeItem{\textbf{Developed} a \textbf{full-stack} web-app that \textbf{leverages Langchain} and \textbf{GPT} to query Figlet's API to generate ASCII messages from user's text input for \href{https://uc-berkeley-ai-hackathon.devpost.com/}{\underline{Calhack's AI Hackathon}} (in under 12 hours)}
-          % \resumeItem{\textbf{Coded} a minimalist interface to focus users on}
-          \resumeItemListEnd
+    {\textbf{Vocode Sandbox} | \small\textit{React, Tailwind CSS} $\rightarrow$ \small\href{https://vocode-sandbox.web.app/}{\underline{https://vocode-sandbox.web.app/}}}{}
+    \resumeItemListStartIndent
+    \resumeItemTabbed{\textbf{Created} a serverless, responsive web-app that lets users experiment with different prompts for Vocode's voice AI}
+    % \resumeItemTabbed{\textbf{Arranged} an \textbf{interactive}  and \textbf{engaging UI} that displays a transcript of the user's conversation}
+    \resumeItemListEndIndent
+
+
+    \resumeProjectHeading
+          {\textbf{ASCII Sandbox} | \small\textit{React, FastAPI, Langchain, OpenAI} $\rightarrow$ \small\href{https://github.com/Cbannon35/ASCII-sandbox}{\small\underline{https://github.com/Cbannon35/ASCII-sandbox}}}{}
+          % \vspace{-15pt}
+          \resumeItemListStartIndent
+          \resumeItemTabbed{\textbf{Developed} a \textbf{full-stack} web-app that \textbf{leverages Langchain} and \textbf{GPT} to query Figlet's API to generate ASCII messages from user's text input for \href{https://uc-berkeley-ai-hackathon.devpost.com/}{\underline{Calhack's AI Hackathon \ExternalLink}} (in under 12 hours)}
+          \resumeItemListEndIndent
           \vspace{-5pt}
       
-    % PROJ 2
-    \resumeProjectHeading
-      {\textbf{Vocode Sandbox} | \small\textit{React, Tailwind CSS} $\rightarrow$ \small\href{https://vocode-sandbox.web.app/}{\underline{https://vocode-sandbox.web.app/}}}{}
-      \resumeItemListStart
-      \resumeItem{\textbf{Created} a serverless, responsive web-app that lets users experiment with different prompts for Vocode's voice AI}
-      \resumeItem{\textbf{Arranged} an \textbf{interactive}  and \textbf{engaging UI} that displays a transcript of the user's conversation}
-      % \resumeItem{\textbf{Leveraged} data visualization tools to \textbf{display trends in crowd density averages} of the campus gym}
-      \resumeItemListEnd
+    
 
       \vspace{-13pt}
     \end{mdframed}
     \resumeSubHeadingListEnd
     \vspace{-15pt}
-    % Proj 3
+    
     \resumeSubHeadingListStart
-    \resumeProjectHeading
-    {\textbf{react-window-component} | \small\textit{React, npm} $\rightarrow$ \href{https://github.com/Cbannon35/react-window-component}{\underline{See the Code}}}{August 2023 - Present}
-    \resumeItemListStart
-    \resumeItem{\textbf{Deployed} a React component library on \textbf{npm} and \textbf{established CI/CD} via \textbf{Github Actions}}
-    \resumeItemListEnd
-    \vspace{-15pt}
+    % Proj 3
+    % \resumeProjectHeading
+    % {\textbf{react-window-component} | \small\textit{React, npm}}{August 2023 - Present}
+    % \resumeItemListStart
+    % \resumeItem{\textbf{Deployed} a React component library on \textbf{npm} and \textbf{established CI/CD} via \textbf{Github Actions}}
+    % \resumeItemListEnd
+    % \vspace{-15pt}
     % Proj 4
     \resumeProjectHeading
-      {\textbf{Piggy} | \small\textit{Product Design, UI/UX, Figma, React Native, MUI} $\rightarrow$ \href{https://github.com/siddhantsharm/160-final-proj/tree/main/src}{\underline{See the Code}}}{August 2022}
+      {\textbf{Piggy} | \small\textit{Product Design, UI/UX, Figma, React Native, MUI}}{August 2022}
       \resumeItemListStart
       \resumeItem{\textbf{Collaborated} with a team of \textbf{6} to \textbf{design} and \textbf{prototype} a \textbf{mobile app} that promotes fiscal responsibility}
-      \resumeItem{\textbf{Conducted} user research and \textbf{iterated} on \textbf{prototypes} to \textbf{improve} the \textbf{user experience} $\rightarrow$ \href{https://docs.google.com/document/d/17vMG9EYrOF4Sdnu8Pw2I1efRw538R-HkPYw4lXINlHI/edit?usp=sharing}{\underline{Design Doc}}}
+      \resumeItem{\textbf{Conducted} user research and \textbf{iterated} on \textbf{prototypes} to \textbf{improve} the \textbf{user experience}}
       \resumeItemListEnd
       
    
