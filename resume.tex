@@ -199,8 +199,6 @@
       {B.A. in Computer Science}{Berkeley, California}
   \resumeSubHeadingListEnd
 \textbf{Coursework:} UI/UX Design \& Development, Data Structures, Algorithms, Computer Architecture, Operating Systems, Discrete Math \& Probability, Data Science, AI, Machine Learning, Digital Design \& Integrated Circuits
-
-
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
@@ -211,16 +209,18 @@
     \resumeItemListStart
       % \resumeItem{Engaged in \textbf{HCI research} at the \href{https://www.hybrid-ecologies.org/}{\underline{Hybrid Ecologies Lab}}, advised by \href{https://www2.eecs.berkeley.edu/Faculty/Homepages/paulos.html}{\underline{Eric Paulos}}, under \href{https://kwsong.github.io/}{\underline{Katherine Song }}}
       % \resumeItem{Experimented with functional bio-materials to create sustainable electronics and decomposable interactive systems}
-      \resumeItem{Experimented with functional bio-materials to create sustainable electronics and decomposable interactive systems}
+      % \resumeItem{\textbf{First author} publication in \textbf{ACM C&C 2024} "A Toolkit for Crafting Simple Sonic Interfaces in Education"}
       \resumeItem{Programmed \textbf{ESP32} microcontrollers for use in low power sensing/broadcasting applications with \textbf{BLE} and \textbf{firebase}}
+      \resumeItem{Experimented with functional bio-materials to create sustainable electronics and decomposable interactive systems}
+      \resumeItem{\textbf{First author} publication \textbf{ACM C\&C 2024} ``A Toolkit for Crafting Simple Sonic Interfaces in Education'' (to appear)}
     \resumeItemListEnd
 
     \resumeSubheading
     {UC Berkeley EECS | Undergraduate Student Instructor (CS160)}{Jun 2023 -- Present}{}{}
     \vspace{-15pt}
     \resumeItemListStart
-    \resumeItem{Organized scope, sequence, and delivery of instruction on \textbf{HCI}, \textbf{UI/UX}, \textbf{web dev}, and \textbf{product design}}
-    \resumeItem{Developed a python script to automate staff Airtable-to-email logistical workflow saving \textbf{10}\% on weekly TA hours}
+    \resumeItem{Organized scope, sequence, and delivery of instruction on \textbf{HCI}, \textbf{UI/UX}, \textbf{web dev}, and \textbf{product design} curriculum}
+    \resumeItem{Automated staff Airtable-to-email pipeline with python, servicing \textbf{hundreds} of requests}
     \resumeItem{Critiqued \textbf{500}$+$ assignments/projects and received a \textbf{9.4/10.0}  approval rating for \textbf{teaching effectiveness}}
     \resumeItemListEnd
 
@@ -233,15 +233,15 @@
     \resumeItem{Implemented and refined user's 'transfer tokens' flow; used \textbf{redux} to  \textbf{integrate} \textbf{firebase} with the \textbf{backend API}, resulting in \textbf{improved} asynchronous efficiency and state management}
     \resumeItemListEnd
 
-    \resumeSubheading
-      {Computer Science Mentors | Senior mentor (CS61B) }{Jan 2022 -- Jan 2024}{}{}
-      \vspace{-15pt}
-      \resumeItemListStart
-      \resumeItem{Lead a weekly comprehensive review session for a group of 61B students; rated \textbf{9.2/10.0} for \textbf{teaching effectiveness}}
-      % \resumeItem{Presented and modeled pedagogy techniques to a cohort of Junior Mentors to strengthen their teaching abilities}
-      % \resumeItem{\textbf{Coordinated} with \textbf{25}$+$ Mentor staff to plan and host course wide social events to \textbf{60}$+$ 61B mentors}
-      \resumeItem{Hosted monthly conceptual workshops for up to \textbf{80} 61B students on \textbf{java}, \textbf{data structures}, and \textbf{algorithms}}
-      \resumeItemListEnd
+    % \resumeSubheading
+    %   {Computer Science Mentors | Senior mentor (CS61B) }{Jan 2022 -- Jan 2024}{}{}
+    %   \vspace{-15pt}
+    %   \resumeItemListStart
+    %   \resumeItem{Lead a weekly comprehensive review session for a group of 61B students; rated \textbf{9.2/10.0} for \textbf{teaching effectiveness}}
+    %   % \resumeItem{Presented and modeled pedagogy techniques to a cohort of Junior Mentors to strengthen their teaching abilities}
+    %   % \resumeItem{\textbf{Coordinated} with \textbf{25}$+$ Mentor staff to plan and host course wide social events to \textbf{60}$+$ 61B mentors}
+    %   \resumeItem{Hosted monthly conceptual workshops for up to \textbf{80} 61B students on \textbf{java}, \textbf{data structures}, and \textbf{algorithms}}
+    %   \resumeItemListEnd
     
   \resumeSubHeadingListEnd
 \vspace{-16pt}
@@ -252,12 +252,31 @@
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
-      {\textbf{Sailor - Frontend Swift Web Framework} | \small\textit{Swift, Python}}{\small\href{https://github.com/SailorWebFramework}{\underline{https://github.com/SailorWebFramework}}}
+      {\textbf{Sailor -- Swift Web Framework} | \small\textit{Swift, Python}}{\small\href{https://github.com/SailorWebFramework}{\underline{https://github.com/SailorWebFramework}}}
       % \vspace{-15pt}
       \resumeItemListStart
-      \resumeItemTabbed{Created basic \textbf{routing} functionality with JavascriptKit and swiftWASM for the \textbf{open source} web framework}
-      \resumeItemTabbed{Developing CLI tool to \textbf{initialize projects} and \textbf{run build scripts} for \textbf{Tailwind} and \textbf{Carton}; distributed via \textbf{brew}}
-      \resumeItemTabbed{Constructing a JSON schema that generates swift enums via mustache templates to provide \textbf{type safety}}
+      % \resumeItemTabbed{Created basic \textbf{routing} functionality with JavascriptKit and swiftWASM for the \textbf{open source} web framework}
+      \resumeItemTabbed{Developing 'Compass' a CLI tool to \textbf{generate, develop, and deploy} Sailor projects and modules}
+      \resumeItemTabbed{Designing architecture for a centralized \textbf{dependency management} and \textbf{package installation} system}
+      % \resumeItemTabbed{Constructing a JSON schema that generates swift enums via mustache templates to provide \textbf{type safety}}
+    \resumeItemListEnd
+    \vspace{-15pt}
+
+    \resumeProjectHeading
+      {\textbf{NYT Connections API} | \small\textit{FastAPI, MongoDB, Selenium}}{\small\href{https://nyt-connections.up.railway.app/}{\underline{https://nyt-connections.up.railway.app/}}}
+      % \vspace{-15pt}
+      \resumeItemListStart
+      \resumeItemTabbed{Engineered a \textbf{RESTful API} that provides web scraped data from The New York Times' Connections game}
+      \resumeItemTabbed{Utilied \textbf{Github Actions} to asynchronously scrape and store data and introduced rate limiting to prevent abuse}
+    \resumeItemListEnd
+    \vspace{-15pt}
+
+    \resumeProjectHeading
+      {\textbf{ASCII Sandbox} | \small\textit{React, Typescript, FastAPI}}{\small\href{https://github.com/Cbannon35/ASCII-sandbox}{\small\underline{https://github.com/Cbannon35/ASCII-sandbox}}}
+      % \vspace{-15pt}
+      \resumeItemListStart
+      \resumeItemTabbed{Built a \textbf{full-stack} web-app that \textbf{leverages Langchain} and \textbf{GPT} to query Figlet's API to generate ASCII text}
+      % \resumeItemTabbed{Migrated development to \textbf{Svelte}}
     \resumeItemListEnd
     \vspace{-15pt}
 
@@ -268,25 +287,6 @@
       \resumeItemTabbed{Designed and implemented a 3-stage pipelined RISC-V CPU with integrated UART for tethering, using Verilog}
       \resumeItemTabbed{Integrated audio and IO components to the CPU system, via memory mapping, to create a functional audio synthesizer}
       \resumeItemTabbed{\textbf{Doubled} clock speed to \textbf{100MHz} by adding pipeline stages, smart forwarding, and BTFNT branch prediction}
-    \resumeItemListEnd
-    \vspace{-15pt}
-
-    \resumeProjectHeading
-      {\textbf{NYT Connections API} | \small\textit{Python, SQL, Django, Docker}}{}
-      % \vspace{-15pt}
-      \resumeItemListStart
-      \resumeItemTabbed{Engineered a \textbf{RESTful API} with \textbf{Django} that provides data from The New York Times' Connections game}
-      % \resumeItemTabbed{Minimized downtime with async task processing via \textbf{Celery}; used \textbf{Selenium} and \textbf{BeautifulSoup} for web scraping}
-      \resumeItemTabbed{Incorporated \textbf{Selenium} and \textbf{BeautifulSoup} for web scraping and \textbf{Celery} for asynchronous task processing}
-    \resumeItemListEnd
-    \vspace{-15pt}
-
-    \resumeProjectHeading
-      {\textbf{ASCII Sandbox} | \small\textit{React, Typescript, FastAPI}}{\small\href{https://github.com/Cbannon35/ASCII-sandbox}{\small\underline{https://github.com/Cbannon35/ASCII-sandbox}}}
-      % \vspace{-15pt}
-      \resumeItemListStart
-      \resumeItemTabbed{Built a \textbf{full-stack} web-app that \textbf{leverages Langchain} and \textbf{GPT} to query Figlet's API to generate ASCII text}
-      % \resumeItemTabbed{Migrated development to \textbf{Svelte}}
     \resumeItemListEnd
     % \vspace{-15pt}
 
@@ -303,6 +303,8 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0in, label={}]
     \item{
+      \textbf{Certificates}{: Jacobs Institute Certificate in Design Innovation, BCNM Certificate in New Media} \\
+      \vspace{4pt}
       \textbf{Computer Languages}{: Python, C, Java, Swift, HTML/CSS, JavaScript, Typescript, RISC-V Assembly, Verilog} \\
       \vspace{4pt}
       \textbf{Full-Stack Technologies}{: React, Redux, Svelte, Expo, Tailwind, Bootstrap, FastAPI, MongoDB, SQL, Firebase} \\
