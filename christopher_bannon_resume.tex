@@ -32,7 +32,7 @@
 
 % serif
 % \usepackage{CormorantGaramond}
-% \usepackage{charter}
+\usepackage{charter}
 
 
 \pagestyle{fancy}
@@ -66,16 +66,16 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{0pt}}
+    {#1 \vspace{2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -114,115 +114,128 @@
     ~ \small \href{https://cbannon.com}{\raisebox{-0.2\height}\faLink\ \underline{cbannon.com}} ~
     % ~ \small \href{https://read.cv/cbannon}{\raisebox{-0.2\height}\faFile\ \underline{read.cv/cbannon}} ~
     % ~\small \raisebox{-0.1\height}\faPhone\ 707-761-4944 ~
-    % \href{https://linkedin.com/in/cbannon/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/cbannon}}  ~
-    ~\href{https://github.com/cbannon35}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/cbannon35}}~
+    \href{https://linkedin.com/in/cbannon/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/cbannon}}  ~
+    % ~\href{https://github.com/cbannon35}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/cbannon35}}~
     \vspace{-8pt}
 \end{center}
-
-
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of California, Berkeley}{Aug 2020 -- Dec 2024}
-      {Bachelor of Arts in Computer Science - GPA: 3.75}{Berkeley, CA}
-  \resumeSubHeadingListEnd
-  \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{\textbf{Coursework:} UI/UX Design \& Development, Data Structures, Algorithms, Computer Architecture, Operating Systems, Discrete Math \& Probability, Data Science, AI, Machine Learning, Digital Design \& Integrated Circuits
-    }}
-  \end{itemize}
-
-  %-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
-   \small{\item{
-    \textbf{Languages}{: Java, Python, C/C++, SQL (Postgres), JavaScript, Typescript, HTML/CSS, Go, Swift, Verilog, RISC-V} \\
-    \textbf{Tools}{: React, Next.js, Flask, FastAPI, Redux, MongoDB, Firebase, NumPy, PyTorch, seaborn, pandas} \\
-   }}
-\end{itemize}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {KAIST School of Computing}{Aug 2024 -- Dec 2024}
-      {HCI Research Intern -- Make Lab}{Deajeon, South Korea}
+  \resumeSubheading
+      {Amazon (AWS), \textnormal{\emph{Software Engineer}}}{Oct 2024 -- Present}
+      {}{}
+      \vspace{-15pt}
       \resumeItemListStart
-        \resumeItem{Developing full-stack and XR applications to research the use of \textbf{generative AI in spatial computing}}
-        \resumeItem{Built a low-latency media server and ML pipeline to process \textbf{real-time} audiovisual content for XR experiences}
+        \resumeItem{Lead team's development of a new feature, coordinating across \textbf{5} sister teams and \textbf{12+} engineers through launch; loadtesting \textbf{6+} APIs to to ensure high availability and low latency}
+        \resumeItem{Refactored service, slashing time to alarm by \textbf{80\%}, accelerating triage and reducing customer impact}
+        \resumeItem{Designed a real-time, scalable analytics feature, using lambda and DDB to ensure high availability and low latency}
+        \resumeItem{Optimized CI/CD infrastructure, cutting end-to-end deploy time by \textbf{35\%} and improving pipeline health}
+        \resumeItem{Lead our team's adoption of new infrastructure visualization tools, increasing developer productivity by over \textbf{10\%}}
+        \resumeItem{Mentored \textbf{2} new-hires and \textbf{2} interns on service architecture and code quality, cutting onboarding time by \textbf{25\%}}
       \resumeItemListEnd
 
     \resumeSubheading
-      {UC Berkeley EECS}{Aug 2023 -- Aug 2024}
-      {HCI Researcher - Hybrid Ecologies Lab}{Berkeley, CA}
+      {Make Lab @ KAIST School of Computing, \textnormal{\emph{HCI Researcher}}}{Aug 2024 -- Oct 2024}
+      {}{}
+      \vspace{-15pt}
       \resumeItemListStart
-      \resumeItem{\textbf{First author} publication: \underline{\href{https://dl.acm.org/doi/10.1145/3635636.3664266}{\textbf{ACM C\&C 2024} ``A Toolkit for Crafting Simple Sonic Interfaces in Education''}}}
-      \resumeItem{Programmed a \textbf{distributed BLE communication protocol} for ESP32 microcontrollers in sensing applications}
-      \resumeItem{Launched a \textbf{Next.js} dashboard to visualize and interact with the system's server \textbf{20+} client nodes in real-time}
-    \resumeItemListEnd
-
-    \resumeSubSubheading
-        {Student Instructor - User Interface Design \& Development}{Jun 2023 - Aug 2024}
-        \resumeItemListStart
-        % \resumeItem{Organized scope, sequence, and delivery of instruction on \textbf{HCI}, \textbf{UI/UX}, and \textbf{web development} curriculum}
-        \resumeItem{Automated course infrastructure and grading with Playwright and Python, \textbf{saving 10\%} weekly TA hours }
-        \resumeItem{Critiqued \textbf{1000}$+$ assignments/projects and received a \textbf{98\%}  approval rating for \textbf{teaching effectiveness}}
-        \resumeItemListEnd
+        \resumeItem{\textbf{Wrote ACM CHI 2025}: \underline{\href{https://dl.acm.org/doi/10.1145/3706599.3721180}{``Exploring and Creating Camera Movements with Spatial Reference in Augmented Reality''}}}
+        \resumeItem{Built an AR prototyping tool for scene composition, integrating a custom Blender plug-in to streamline camera-layout iteration; validated the workflow in \textbf{9} user studies with 3D designers \& animators.}
+        \resumeItem{Built a media server and ML pipeline in Go, using WebRTC and media pipes, to strip backgrounds from user video feed in \textbf{real-time} for for VR/XR experiences; up to \textbf{40+} fps}
+      \resumeItemListEnd
 
     \resumeSubheading
-      {FavorX}{May 2023 -- Aug 2023}
-      {Software Engineer Intern}{Remote}
+      {Hybrid Ecologies Lab @ UC Berkeley, \textnormal{\emph{HCI Researcher}}}{Aug 2023 -- Aug 2024}
+      {}{}
+      \vspace{-15pt}
       \resumeItemListStart
-      \resumeItem{Designed \textbf{10+ user-centric} application screens and user flows in Figma and deployed solutions in \textbf{React Native}}
-      \resumeItem{Scaffolded a \textbf{scalable} service using Expo's API to upload profile pictures to a \textbf{secure URL} in an \textbf{AWS S3} bucket}
-      \resumeItem{Streamlined the `token transfer' user experience, increasing peer-to-peer transactions by \textbf{15\%}}  
+      \resumeItem{\textbf{Authored} \textbf{ACM C\&C 2024} \underline{\href{https://dl.acm.org/doi/10.1145/3635636.3664266}{``A Toolkit for Crafting Simple Sonic Interfaces in Education''}}}
+      \resumeItem{Programmed a \textbf{distributed BLE communication protocol} for ESP32 based sensor nodes and launched a dashboard (Next.js $+$ Firebase) to enable realtime prototyping during user studies with \textbf{20+} participants}
+    \resumeItemListEnd
+
+    % \resumeSubSubheading
+    %     {Student Instructor - User Interface Design \& Development}{Jun 2023 - Aug 2024}
+    %     \resumeItemListStart
+    %     % \resumeItem{Organized scope, sequence, and delivery of instruction on \textbf{HCI}, \textbf{UI/UX}, and \textbf{web development} curriculum}
+    %     \resumeItem{Automated course infrastructure and grading with Playwright and Python, \textbf{saving 10\%} weekly TA hours }
+    %     \resumeItem{Critiqued \textbf{1000}$+$ assignments/projects and received a \textbf{98\%}  approval rating for \textbf{teaching effectiveness}}
+    %     \resumeItemListEnd
+
+    \resumeSubheading
+      {FavorX, \textnormal{\emph{Software Engineer Intern}}}{May 2023 -- Aug 2023}
+      {}{}
+      \vspace{-15pt}
+      \resumeItemListStart
+      \resumeItem{Designed \textbf{10+ user-centric} application screens and user flows in Figma and deployed solutions in React Native}
+      % \resumeItem{Scaffolded a \textbf{scalable} service using Expo's API to upload profile pictures to a \textbf{secure URL} in an \textbf{AWS S3} bucket}
+      \resumeItem{Lead development of the QR Code `token transfer' user experience, increasing peer-to-peer transactions by \textbf{15\%}}  
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 
+%     %-----------Publications-----------
+% \section{Publications}
+% \end{itemize}
+
+  %-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+   \small{\item{
+    \textbf{Languages}{: Java, Python, C/C++, Go, Swift, Rust, JavaScript, Typescript, HTML/CSS, SQL} \\
+    \textbf{Tools}{: React, Next.js, FastAPI, Redux, MongoDB, Firebase, NumPy, PyTorch, seaborn, pandas} \\
+   }}
+\end{itemize}
+
+
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
-      \resumeProjectHeading
-        {\textbf{Better Connections} $|$ \emph{React, Framer, FastAPI, MongoDB}}{\small\href{https://connections-lyart.vercel.app/}{\small\underline{https://connections-lyart.vercel.app/}}}
+
+    \resumeProjectHeading
+        {\textbf{Minecraft Server Admin Plugins \& Tools}}{\small\emph{Java, Rust, ElasticSearch}}
         \resumeItemListStart
-        \resumeItem{Deployed a \textbf{Progressive Web App} to improve the mobile experience of the NYT Connections Game}
-        \resumeItem{Hosted a rate-limited backend API with an AI-powered hint endpoint using \textbf{GPT-4o mini}}
-        \resumeItem{Utilized a \textbf{Github Actions} workflow to asynchronously scrape and store data to keep the app up-to-date}
+        \resumeItem{Created \textbf{3} custom Java plugins to communicate realtime server metrics, player position, \& logs to a text-based GUI, enabling server performance and player conduct monitoring for up to \textbf{20+} concurrent players}
         \resumeItemListEnd
 
       \resumeProjectHeading
-        {\textbf{Sailor Frontend Web Framework} $|$ \emph{Swift, Python, WASM, JSKit}}{\small\underline{https://github.com/SailorWebFramework}}
-          \resumeItemListStart
-           \resumeItem{Created basic \textbf{routing} functionality with JavascriptKit for the \textbf{open source} Swift-based frontend web framework}
-          \resumeItem{Developed a companion CLI tool `Compass', to generate new projects and automatically manage project resources}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-      {\textbf{ShaderPlay} $|$ \emph{SwiftUI, Firebase}}{}
+        {\href{https://connections-lyart.vercel.app/}{\textbf{Better Connections \faLink}}}{\small\emph{React, Python, MongoDB}}
         \resumeItemListStart
-          \resumeItem{Developed an IOS app that allows users to create, share, and edit custom Metal and GLSL shaders}
-          \resumeItem{Combined a text editor with syntax highlighting and a live shader preview to create a seamless user experience}
+        \resumeItem{Built an Progressive Web-App of the NYT Connections game featuring Framer Motion animations, a rate-limited FastAPI/GPT-4o mini hint API; utilized GitHub actions to asynchronously update the DB to keep the app up to date}
         \resumeItemListEnd
 
-      \resumeProjectHeading
-          {\textbf{RISCV CPU with Audio Synthesizer} | \small\textit{Verilog, C, Python}}{}
-          % \vspace{-15pt}
-          \resumeItemListStart
-          \resumeItem{Built and unit tested a 3-stage pipelined RISC-V CPU with integrated UART for tethering, using Verilog}
-          % \resumeItem{Integrated audio and IO components to the CPU systemto create a functional audio synthesizer}
-          \resumeItem{\textbf{Doubled} clock speed to \textbf{100MHz} by adding pipeline stages, smart forwarding, and BTFNT branch prediction}
-        \resumeItemListEnd
+      % \resumeProjectHeading
+      %   {\textbf{Sailor Frontend Web Framework} $|$ \emph{Swift, Python, WASM, JSKit}}{\small\underline{https://github.com/SailorWebFramework}}
+      %     \resumeItemListStart
+      %     %  \resumeItem{Created basic \textbf{routing} functionality with JavascriptKit for the \textbf{open source} Swift-based frontend web framework}
+      %     \resumeItem{Developed a companion CLI tool `Compass', to generate new projects and automatically manage project resources}
+      %     \resumeItemListEnd
+
+      % \resumeProjectHeading
+      % {\textbf{ShaderPlay} $|$ \emph{SwiftUI, Firebase}}{}
+      %   \resumeItemListStart
+      %     \resumeItem{Developed an IOS app that allows users to create, share, and edit custom Metal and GLSL shaders}
+      %     \resumeItem{Combined a text editor with syntax highlighting and a live shader preview to create a seamless user experience}
+      %   \resumeItemListEnd
+
+      % \resumeProjectHeading
+      %     {\textbf{RISCV CPU with Audio Synthesizer} | \small\textit{Verilog, C, Python}}{}
+      %     % \vspace{-15pt}
+      %     \resumeItemListStart
+      %     \resumeItem{Built and unit tested a 3-stage pipelined RISC-V CPU with integrated UART for tethering, using Verilog}
+      %     % \resumeItem{Integrated audio and IO components to the CPU systemto create a functional audio synthesizer}
+      %     \resumeItem{\textbf{Doubled} clock speed to \textbf{100MHz} by adding pipeline stages, smart forwarding, and BTFNT branch prediction}
+      %   \resumeItemListEnd
 
     % \vspace{-15pt}
-      \resumeProjectHeading
-        {\textbf{Neural Network} $|$ \emph{Python, NumPy}}{}
-          \resumeItemListStart
-            \resumeItem{Created a neural network from scratch and designed support for fully connected, convolutional, and pooling layers}
-            \resumeItem{Optimized hyperparameters to achieve \textbf{98\%} accuracy on the Iris dataset}
-          \resumeItemListEnd
+      % \resumeProjectHeading
+      %   {\textbf{Neural Network} $|$ \emph{Python, NumPy}}{}
+      %     \resumeItemListStart
+      %       \resumeItem{Created a neural network from scratch and designed support for fully connected, convolutional, and pooling layers}
+      %       \resumeItem{Optimized hyperparameters to achieve \textbf{98\%} accuracy on the Iris dataset}
+      %     \resumeItemListEnd
       % \resumeProjectHeading
       %   {\textbf{ASCII Sandbox} $|$ \emph{React, FastAPI, OpenAI, LangChain}}{}
       %   \resumeItemListStart
@@ -248,6 +261,19 @@
       %     \resumeItem{Utilized graph theory to optimize the merging of commit trees}
       %   \resumeItemListEnd
     \resumeSubHeadingListEnd
+
+    %-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Berkeley, \textnormal{\textit{B.A. in Computer Science}}}{Aug 2020 -- Dec 2024}
+      {}{}
+      \vspace{-15pt}
+      \resumeItemListStart
+      \resumeItem{\textbf{GPA: 3.75 $|$}{ Outstanding Student Instructor Award (Top 10\% of TAs)}, Certificate of Design Innovation}
+      \resumeItem{\textbf{Coursework:} UI/UX Design, Data Structures, Algorithms, Computer Architecture, OS, Data Science, AI, ML}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
 
 %-------------------------------------------
