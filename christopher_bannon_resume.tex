@@ -128,12 +128,13 @@
       {}{}
       \vspace{-15pt}
       \resumeItemListStart
-        \resumeItem{Lead team's development of a new feature, coordinating across \textbf{5} sister teams and \textbf{12+} engineers through launch; loadtesting \textbf{6+} APIs to to ensure high availability and low latency}
-        \resumeItem{Refactored service, slashing time to alarm by \textbf{80\%}, accelerating triage and reducing customer impact}
-        \resumeItem{Designed a real-time, scalable analytics feature, using lambda and DDB to ensure high availability and low latency}
+        \resumeItem{Drove team's development, coordinating across \textbf{5} sister teams and \textbf{12+} engineers through launch of a feature enabled by \textbf{XX thousand} customers supporting the secure offline use of ML workloads}
+        \resumeItem{Engineered an agentic infrastructure analyzer using Bedrock, Langchain and Strands to root cause Cloud Formation build failures and integration test failures; won \textbf{1st place} in an org wide hackathon of \textbf{100+ teams}}
+        \resumeItem{Performed end-to-end load testing over \textbf{10+} APIs and chaos testing \textbf{30+} failure scenarios across \textbf{4} downstream services to ensure high availability, low latency and proper investigation/recovery mechanisms}
         \resumeItem{Optimized CI/CD infrastructure, cutting end-to-end deploy time by \textbf{35\%} and improving pipeline health}
-        \resumeItem{Lead our team's adoption of new infrastructure visualization tools, increasing developer productivity by over \textbf{10\%}}
+        \resumeItem{Led our team's adoption of new infrastructure visualization tools, increasing developer productivity by over \textbf{10\%}}
         \resumeItem{Mentored \textbf{2} new-hires and \textbf{2} interns on service architecture and code quality, cutting onboarding time by \textbf{25\%}}
+        % \resumeItem{Designed a scalable analytics feature, using lambda and DDB to aggregate data over \textbf{millions} of objects}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -142,8 +143,8 @@
       \vspace{-15pt}
       \resumeItemListStart
         \resumeItem{\textbf{Wrote ACM CHI 2025}: \underline{\href{https://dl.acm.org/doi/10.1145/3706599.3721180}{``Exploring and Creating Camera Movements with Spatial Reference in Augmented Reality''}}}
-        \resumeItem{Built an AR prototyping tool for scene composition, integrating a custom Blender plug-in to streamline camera-layout iteration; validated the workflow in \textbf{9} user studies with 3D designers \& animators.}
-        \resumeItem{Built a media server and ML pipeline in Go, using WebRTC and media pipes, to strip backgrounds from user video feed in \textbf{real-time} for for VR/XR experiences; up to \textbf{40+} fps}
+        \resumeItem{Deployed an AR prototyping tool for scene composition, integrating a custom Blender plug-in to streamline camera-layout iteration and validated the workflow in \textbf{9} user studies with 3D designers \& animators.}
+        \resumeItem{Architected a media server and ML pipeline in Go, using WebRTC and MediaPipe, to strip backgrounds from user video feed in \textbf{real-time} for VR/XR experiences; up to \textbf{40+} fps}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -152,7 +153,7 @@
       \vspace{-15pt}
       \resumeItemListStart
       \resumeItem{\textbf{Authored} \textbf{ACM C\&C 2024} \underline{\href{https://dl.acm.org/doi/10.1145/3635636.3664266}{``A Toolkit for Crafting Simple Sonic Interfaces in Education''}}}
-      \resumeItem{Programmed a \textbf{distributed BLE communication protocol} for ESP32 based sensor nodes and launched a dashboard (Next.js $+$ Firebase) to enable realtime prototyping during user studies with \textbf{20+} participants}
+      \resumeItem{Programmed a \textbf{distributed BLE communication protocol} for ESP32-based sensor nodes and launched a dashboard (Next.js $+$ Firebase) to enable rapid iteration during user studies with \textbf{20+} participants}
     \resumeItemListEnd
 
     % \resumeSubSubheading
@@ -170,7 +171,7 @@
       \resumeItemListStart
       \resumeItem{Designed \textbf{10+ user-centric} application screens and user flows in Figma and deployed solutions in React Native}
       % \resumeItem{Scaffolded a \textbf{scalable} service using Expo's API to upload profile pictures to a \textbf{secure URL} in an \textbf{AWS S3} bucket}
-      \resumeItem{Lead development of the QR Code `token transfer' user experience, increasing peer-to-peer transactions by \textbf{15\%}}  
+      \resumeItem{Led development of the QR Code `token transfer' user experience, increasing peer-to-peer transactions by \textbf{15\%}}  
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -184,7 +185,7 @@
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
    \small{\item{
-    \textbf{Languages}{: Java, Python, C/C++, Go, Swift, Rust, JavaScript, Typescript, HTML/CSS, SQL} \\
+    \textbf{Languages}{: Java, Python, C/C++, Go, Swift, Rust, JavaScript, TypeScript, HTML/CSS, SQL} \\
     \textbf{Tools}{: React, Next.js, FastAPI, Redux, MongoDB, Firebase, NumPy, PyTorch, seaborn, pandas} \\
    }}
 \end{itemize}
@@ -195,15 +196,16 @@
     \resumeSubHeadingListStart
 
     \resumeProjectHeading
-        {\textbf{Minecraft Server Admin Plugins \& Tools}}{\small\emph{Java, Rust, ElasticSearch}}
+        {\href{https://minelapse.vercel.app/}{\textbf{Minelapse} \faLink}}{\small\emph{Java, Kotlin, React, Rust}}
         \resumeItemListStart
-        \resumeItem{Created \textbf{3} custom Java plugins to communicate realtime server metrics, player position, \& logs to a text-based GUI, enabling server performance and player conduct monitoring for up to \textbf{20+} concurrent players}
+        \resumeItem{Built a Minecraft plugin and custom reconciliation algorithm to filter and store \textbf{1000+} of player events/second}
+        \resumeItem{Crafted a custom web-based renderer to play back stored player and world data as a timelapse. Supports \textbf{30+} FPS and allows scrubbing specific timeframes and filtering by player}
         \resumeItemListEnd
 
       \resumeProjectHeading
-        {\href{https://connections-lyart.vercel.app/}{\textbf{Better Connections \faLink}}}{\small\emph{React, Python, MongoDB}}
+        {\href{https://connections-lyart.vercel.app/}{\textbf{Better Connections \faLink}}}{\small\emph{React, Python, FastAPI, MongoDB}}
         \resumeItemListStart
-        \resumeItem{Built an Progressive Web-App of the NYT Connections game featuring Framer Motion animations, a rate-limited FastAPI/GPT-4o mini hint API; utilized GitHub actions to asynchronously update the DB to keep the app up to date}
+        \resumeItem{Built PWA of NYT Connections with \textbf{20+} Framer Motion animations and GPT-4o-mini powered hint API. Automated daily DB refreshes via GitHub Actions for seamless updates, keeping the game up to date}
         \resumeItemListEnd
 
       % \resumeProjectHeading
@@ -266,7 +268,7 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {University of California, Berkeley, \textnormal{\textit{B.A. in Computer Science}}}{Aug 2020 -- Dec 2024}
+      {University of California, Berkeley, \textnormal{\textit{B.A. in Computer Science}}}{}
       {}{}
       \vspace{-15pt}
       \resumeItemListStart
